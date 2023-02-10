@@ -1,0 +1,25 @@
+{
+  "name": "ActiveLookSDK",
+  "version": "4.4.0",
+  "summary": "An iOS library to interact with ActiveLook eyewear",
+  "description": "This CocoaPod provides the ability to connect to ActiveLook eyewear running\na firmware >= 4.0.0  and send various commands",
+  "homepage": "https://github.com/ActiveLook/ios-sdk",
+  "license": {
+    "type": "Apache",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Sylvain Romillon": "sylvain.romillon@microoled.net"
+  },
+  "source": {
+    "git": "https://github.com/ActiveLook/ios-sdk.git",
+    "tag": "4.4.0"
+  },
+  "source_files": "Sources/**/*",
+  "swift_versions": "5.0",
+  "platforms": {
+    "ios": "12.0",
+    "watchos": "6.0"
+  },
+  "swift_version": "5.0"
+}

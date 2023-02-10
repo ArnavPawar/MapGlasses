@@ -1,0 +1,22 @@
+PODS:
+  - ActiveLookSDK (4.4.0)
+
+DEPENDENCIES:
+  - ActiveLookSDK (from `https://github.com/ActiveLook/ios-sdk.git`, branch `feat/imgSave-heatshrink-Save-Comp`)
+
+EXTERNAL SOURCES:
+  ActiveLookSDK:
+    :branch: feat/imgSave-heatshrink-Save-Comp
+    :git: https://github.com/ActiveLook/ios-sdk.git
+
+CHECKOUT OPTIONS:
+  ActiveLookSDK:
+    :commit: 0e4fc884d73d2f935a53ea7bdd2047671079e5d3
+    :git: https://github.com/ActiveLook/ios-sdk.git
+
+SPEC CHECKSUMS:
+  ActiveLookSDK: 64b66672fd82bc0d521f9fb29d4aab693703972e
+
+PODFILE CHECKSUM: a10a97ad4fe25459d04c7fbb547125c9f9999b71
+
+COCOAPODS: 1.11.3

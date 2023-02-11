@@ -13,6 +13,8 @@ import ActiveLookSDK
 
 class MapScreen: UIViewController {
     
+    @IBOutlet weak var Stopper: UIButton!
+    @IBOutlet weak var updateGlasses: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var goButton: UIButton!
@@ -215,6 +217,12 @@ class MapScreen: UIViewController {
     }
     
     
+    @IBAction func stopLens(_ sender: UIButton) {
+        //startInterrupterLoop(isRunning: false)
+    }
+    @IBAction func updatetapped(_ sender: UIButton) {
+        //startInterrupterLoop(isRunning: true)
+    }
     @IBAction func goButtonTapped(_ sender: UIButton) {
         getDirections()
         generateImageFromMap()
@@ -268,9 +276,25 @@ extension MapScreen: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
         renderer.strokeColor = .blue
-        
         return renderer
     }
+    
+    // Start the interrupter loop
+    /*func startInterrupterLoop(isRunning: Bool) {
+        // Create a timer that will fire every 1 second
+        let timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
+            if isRunning == true {
+                // Call the function
+                self.generateImageFromMap()
+            } else {
+                // Stop the timer if the interrupter loop is no longer running
+                timer.invalidate()
+            }
+        }
+
+        // Add the timer to the run loop
+        RunLoop.current.add(timer, forMode: .common)
+    }*/
     
     private func generateImageFromMap() {
         let mapSnapshotterOptions = MKMapSnapshotter.Options()
@@ -282,6 +306,8 @@ extension MapScreen: MKMapViewDelegate {
 
 
         let snapShotter = MKMapSnapshotter(options: mapSnapshotterOptions)
+        
+        
         snapShotter.start() { snapshot, error in
             if let image = snapshot?.image{
                 self.glassesConnected?.imgStream(image: image, x: 0, y: 0, imgStreamFmt: .MONO_4BPP_HEATSHRINK)
